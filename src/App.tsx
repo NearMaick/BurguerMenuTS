@@ -117,27 +117,26 @@ const Burger: React.FC<ToggleOpenModalProps> = ({ open, setOpen }) => {
   )
 }
 
-// const useOnClickOutside: React.FC = (ref, handler) => {
-//   React.useEffect(() => {
-//     const listener = event => {
-//       if (!ref.current || ref.current.contains(event.target)) {
-//         return;
-//       }
-//       handler(event);
-//     };
-//     document.addEventListener('mousedown', listener);
-
-//     return () => {
-//       document.removeEventListener('mousedown', listener);
-//     };
-//   },
-//   [ref, handler],
-//   );
-// };
-
 const App : React.FC<ToggleOpenModalProps> = () => {
   const [isOpen, setIsOpen] = React.useState(false);
-  // const node = React.useRef();
+
+  const useOnClickOutside =  React.useCallback(( ref, handler ) => {
+    const listener = (event: any) => {
+      if (!ref.current || ref.current.contains(event.target)) {
+        return;
+      }
+      handler(event);
+    };
+    document.addEventListener('mousedown', listener);
+
+    return () => {
+      document.removeEventListener('mousedown', listener);
+    };
+  }, []);
+
+  const node = React.useRef(null);
+  useOnClickOutside(node, () => setIsOpen(false));
+  
   return (
     <div>
       <div>
@@ -146,7 +145,7 @@ const App : React.FC<ToggleOpenModalProps> = () => {
         <small>Icon made by <a href="https://www.freepik.com/home">Freepik</a> from <a href="https://www.flaticon.com">www.flaticon.com</a></small>
        </div>
       {/* <div ref={node}> */}
-      <div>
+      <div ref={node}>
         <Burger open={isOpen} setOpen={setIsOpen} />
         <Menu open={isOpen} setOpen={setIsOpen} />
       </div>
