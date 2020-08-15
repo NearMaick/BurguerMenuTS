@@ -144,7 +144,6 @@ const App : React.FC<ToggleOpenModalProps> = () => {
         <img src="https://image.flaticon.com/icons/svg/2016/2016012.svg" alt="burger icon" />
         <small>Icon made by <a href="https://www.freepik.com/home">Freepik</a> from <a href="https://www.flaticon.com">www.flaticon.com</a></small>
        </div>
-      {/* <div ref={node}> */}
       <div ref={node}>
         <Burger open={isOpen} setOpen={setIsOpen} />
         <Menu open={isOpen} setOpen={setIsOpen} />
