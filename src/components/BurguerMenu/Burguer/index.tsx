@@ -1,11 +1,8 @@
-import React, { AnchorHTMLAttributes } from 'react';
+import React from 'react';
 
 import { StyledBurger } from './styles';
 
-export type ToggleOpenModalProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
-  open?: boolean;
-  setOpen?: (open: true | false) => void;
-}
+import { ToggleOpenModalProps } from '../index';
 
 const Burger: React.FC<ToggleOpenModalProps> = ({ open, setOpen }) => {
   return (

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { ToggleOpenModalProps } from './index';
+import { ToggleOpenModalProps } from '../index';
 
 export const StyledMenu = styled.nav<ToggleOpenModalProps>`
   display: flex;

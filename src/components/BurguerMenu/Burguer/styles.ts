@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { ToggleOpenModalProps } from './index';
+import { ToggleOpenModalProps } from '../index';
 
 export const StyledBurger = styled.button<ToggleOpenModalProps>`
   position: absolute;
@@ -23,7 +23,7 @@ export const StyledBurger = styled.button<ToggleOpenModalProps>`
   div {
     width: 2rem;
     height: 0.25rem;
-    background: ${({ open }) => open ? '#0D0C1D' : '#EFFFFA'};
+    background: ${({ open }) => open ? '#0D0C1D' : '#00f'};
     border-radius: 10px;
     transition: all 0.3s linear;
     position: relative;

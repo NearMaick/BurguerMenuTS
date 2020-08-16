@@ -1,11 +1,7 @@
-import React, { AnchorHTMLAttributes } from 'react';
+import React from 'react';
 
+import { ToggleOpenModalProps } from '../index';
 import { StyledMenu } from './styles';
-
-export type ToggleOpenModalProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
-  open?: boolean;
-  setOpen?: (open: true | false) => void;
-}
 
 const Menu: React.FC<ToggleOpenModalProps> = ({ open }) => {
   return (
